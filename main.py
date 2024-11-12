@@ -45,6 +45,7 @@ def fetch_and_notify_new_coins(last_checked_timestamp):
                 f"🔹 <b>New Coin Listed!</b>\n"
                 f"<b>Name:</b> {coin['name']}\n"
                 f"<b>Symbol:</b> {coin['symbol']}\n"
+                f"<b>Address:</b> {coin.get('mint', 'N/A')}\n"
                 f"<b>Description:</b> {coin['description']}\n"
                 f"<b>Market Cap:</b> ${coin['usd_market_cap']}\n"
                 f"<b>Website:</b> {coin.get('website', 'N/A')}\n"
