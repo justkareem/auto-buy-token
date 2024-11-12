@@ -1,9 +1,11 @@
+import os
+
 import requests
 import time
 
-# Telegram bot configuration
-TELEGRAM_TOKEN = "7322435646:AAFeQqeAGW3G2lzPOTI400exq9k-9okCSmQ"
-TELEGRAM_CHAT_ID = "1418866933"
+# Telegram bot configuration (set as environment variables)
+TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
+TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
 
 # API endpoint to fetch the list of coins
 params = {
