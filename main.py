@@ -1,23 +1,21 @@
 import requests
 import time
-import os
 
-# Telegram bot configuration (set as environment variables)
-TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
-TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
+# Telegram bot configuration
+TELEGRAM_TOKEN = "7322435646:AAFeQqeAGW3G2lzPOTI400exq9k-9okCSmQ"
+TELEGRAM_CHAT_ID = "1418866933"
 
 # API endpoint to fetch the list of coins
-url = "https://frontend-api.pump.fun/coins"
 params = {
     "offset": 0,
-    "limit": 50,
-    "sort": "created_timestamp",
-    "order": "DESC",
+    "limit": 10,
     "includeNsfw": "true"
 }
 
 # Creator filter
 TARGET_CREATOR = "EZX7c1hARBCiVTY62EJLEPwVsUaZWhmvKkuW3nxexidY"
+
+url = f"https://frontend-api.pump.fun/coins/user-created-coins/{TARGET_CREATOR}"
 
 
 # Function to send messages to Telegram
@@ -65,4 +63,4 @@ while True:
     # Update the last checked timestamp to the most recent coin's created timestamp
     last_checked_timestamp = int(time.time() * 1000)
     # Wait before polling again
-    time.sleep(10)  # Poll every 10 seconds
+    time.sleep(5)  # Poll every 5 seconds
