@@ -102,7 +102,7 @@ def fetch_and_buy_new_coins(last_checked_timestamp):
             if address:
                 pool_id = get_first_pool_id(address)
                 if pool_id:
-                    buy_coin(WALLET, pool_id, AMOUNT)
+                    buy_coin(WALLET, address, AMOUNT)
                     end_time = time.time_ns() // 1_000_000  # End time in milliseconds
                     elapsed_time = end_time - start_time
                     logging.info(f"Time from spotting to buying: {elapsed_time} ms")
